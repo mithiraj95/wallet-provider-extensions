@@ -1,0 +1,54 @@
+{
+  "name": "@algorandecosystem/accounts-seed-vault-extension",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Accounts Seed Vault bridge for wallet extensions.",
+  "license": "Apache-2.0",
+  "author": "Algorand Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algorandfoundation/wallet-provider-extensions.git",
+    "directory": "accounts/seed-vault-extension"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "build:watch": "tsc -w -p tsconfig.build.json",
+    "clean": "rm -rf dist coverage node_modules",
+    "docs": "typedoc",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "bench": "vitest bench"
+  },
+  "dependencies": {
+    "@algorandecosystem/keystore-seed-vault": "workspace:*",
+    "@algorandfoundation/accounts-store": "workspace:*",
+    "@algorandfoundation/keystore-core": "workspace:*",
+    "@algorandfoundation/wallet-provider": "catalog:"
+  },
+  "devDependencies": {
+    "@algorandfoundation/accounts-keystore-extension": "workspace:*",
+    "@algorandfoundation/log-store": "workspace:*",
+    "@scure/base": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@algorandfoundation/log-store": "workspace:*",
+    "@tanstack/store": "catalog:",
+    "before-after-hook": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@algorandfoundation/log-store": {
+      "optional": true
+    }
+  }
+}

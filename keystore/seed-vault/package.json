@@ -1,0 +1,52 @@
+{
+  "name": "@algorandecosystem/keystore-seed-vault",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Keystore backed by an external Seed Vault: keys never enter JavaScript.",
+  "license": "Apache-2.0",
+  "author": "Algorand Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algorandfoundation/wallet-provider-extensions.git",
+    "directory": "keystore/seed-vault"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist coverage node_modules",
+    "docs": "typedoc",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "bench": "vitest bench"
+  },
+  "dependencies": {
+    "@algorandfoundation/keystore-core": "workspace:*",
+    "@algorandfoundation/wallet-provider": "catalog:"
+  },
+  "devDependencies": {
+    "@tanstack/store": "catalog:",
+    "before-after-hook": "catalog:",
+    "falcon-1024": "catalog:",
+    "typedoc": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@tanstack/store": "catalog:",
+    "before-after-hook": "catalog:",
+    "falcon-1024": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "falcon-1024": {
+      "optional": true
+    }
+  }
+}
