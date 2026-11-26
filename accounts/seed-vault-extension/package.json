@@ -1,13 +1,12 @@
 {
-  "name": "@algorandecosystem/accounts-seed-vault-extension",
+  "name": "@mithiraj/accounts-seed-vault-extension",
   "version": "0.0.0",
-  "private": true,
   "description": "Accounts Seed Vault bridge for wallet extensions.",
   "license": "Apache-2.0",
   "author": "Algorand Foundation",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/algorandfoundation/wallet-provider-extensions.git",
+    "url": "git+https://github.com/mithiraj95/wallet-provider-extensions.git",
     "directory": "accounts/seed-vault-extension"
   },
   "type": "module",
@@ -20,6 +19,9 @@
       "import": "./dist/index.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "tsc -w -p tsconfig.build.json",
@@ -27,7 +29,9 @@
     "docs": "typedoc",
     "test": "vitest run",
     "test:cov": "vitest run --coverage",
-    "bench": "vitest bench"
+    "bench": "vitest bench",
+    "release": "package-releaser",
+    "release:dry-run": "package-releaser --dry-run"
   },
   "dependencies": {
     "@algorandecosystem/keystore-seed-vault": "workspace:*",
@@ -38,6 +42,7 @@
   "devDependencies": {
     "@algorandfoundation/accounts-keystore-extension": "workspace:*",
     "@algorandfoundation/log-store": "workspace:*",
+    "@algorandfoundation/package-releaser": "workspace:*",
     "@scure/base": "catalog:",
     "vitest": "catalog:"
   },
@@ -50,5 +55,14 @@
     "@algorandfoundation/log-store": {
       "optional": true
     }
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "main",
+        "prerelease": "canary",
+        "channel": "next"
+      }
+    ]
   }
 }

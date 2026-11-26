@@ -216,6 +216,9 @@ importers:
       '@algorandfoundation/log-store':
         specifier: workspace:*
         version: link:../../log
+      '@algorandfoundation/package-releaser':
+        specifier: workspace:*
+        version: link:../../build
       '@scure/base':
         specifier: 'catalog:'
         version: 2.0.0
