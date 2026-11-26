@@ -90,3 +90,5 @@ vault produced for each transaction, in order.
 
 Set `options.accounts.seedVault.autoPopulate` to `false` to keep the extension
 from adding accounts.
+
+Published on npm as `@mithiraj/accounts-seed-vault-extension`.
