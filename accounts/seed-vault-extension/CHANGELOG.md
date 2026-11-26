@@ -1,3 +1,9 @@
+# [accounts-seed-vault-extension@1.0.0-canary.2](https://github.com/mithiraj95/wallet-provider-extensions/compare/accounts-seed-vault-extension@1.0.0-canary.1...accounts-seed-vault-extension@1.0.0-canary.2) (2026-11-26)
+
+### Bug Fixes
+
+- **accounts-seed-vault-extension:** add install instructions ([582c5ab](https://github.com/mithiraj95/wallet-provider-extensions/commit/582c5ab90590d5d4b82364e5723f595f1573a44e))
+
 # accounts-seed-vault-extension@1.0.0-canary.1 (2026-11-26)
 
 ### Bug Fixes
